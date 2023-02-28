@@ -45,4 +45,16 @@ Input datasets should follow the same format (subjects at the rows, stimuli at t
 The model is designed to work with partial data or missing/corrupted entries therefore can handle NaN entries in the input matrix. Therefore if the input dataset has any missing entries, they should be represented with NaN values.
 
 
+### Results on NETFLIX Public Dataset ###
+
+
+Recovered MOS and corresponding CIs
+![Recovered MOS and corresponding CIs](https://github.com/kyillene/ZREC/blob/master/figs/NETFLIX_zrec_mos_ci.png?raw=true)
+
+Subject Inconsistencies and Biases
+![Subject Inconsistencies and Biases](https://github.com/kyillene/ZREC/blob/master/figs/NETFLIX_subject_inconsistency_bias.png?raw=true)
+
+
+
+
 
