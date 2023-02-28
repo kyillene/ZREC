@@ -22,7 +22,7 @@ In the provided scripts, [pandas](https://pandas.pydata.org/ "pandas") is used t
 
 ZREC_Mos_Recovery.py file contains all the necessary functions.
 
-The script contains 4 functions as follows:
+The script contains 5 functions as follows:
 
 **zrec_mos_recovery:** Main function to calculate recovered MOS, corresponding CIs, subject bias, subject inconsistency and content ambiguity.
 
