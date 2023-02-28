@@ -4,7 +4,7 @@ ZREC_Mos_Recovery.py script file contains the necessary function for the followi
 
 * MOS recovery with corresponding CI
 	
-* Pth percentile recovery
+* $P_{th}$ percentile recovery
 	
 * Subject bias estimation
 	
