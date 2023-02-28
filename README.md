@@ -42,7 +42,7 @@ The dataset contains 26 subjects and 79 stimuli. CSV file contains a 26x79 tabul
 
 Input datasets should follow the same format (subjects at the rows, stimuli at the columns) and should be inputted as a numpy array to the functions described in Usage. 
 
-The model is designed to work with partial data or missing/corrupted entries therefore can handle NaN entries in the input matrix. Therefore any missing data in the dataset array should be indicated by NaN values.
+The model is designed to work with partial data or missing/corrupted entries therefore can handle NaN entries in the input matrix. Therefore if the input dataset has any missing entries, they should be represented with NaN values.
 
 
 
