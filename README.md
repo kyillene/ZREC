@@ -1,4 +1,4 @@
-# ZREC: Subject Behavior Analysis and Recovery of Mean and percentile Opinion Scores from Noisy Observations #
+# ZREC: Robust Recovery of Mean and Percentile Opinion Scores #
 
 * MOS recovery with corresponding CI
 	
