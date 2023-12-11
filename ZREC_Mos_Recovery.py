@@ -58,8 +58,8 @@ def weighted_avg_std(values, weights):
     :return: average: weighted average as the recovered mean opinion scores
              std: weighted std as the std of the recovered mean opinion scores
     """
-    average = np.average(values, weights=weights, axis=0)
-    variance = np.average((values - average) ** 2, weights=weights, axis=0)
+    average = np.ma.average(values, weights=weights, axis=0)
+    variance = np.ma.average((values - average) ** 2, weights=weights, axis=0)
     std = np.sqrt(variance)
     return average, std
 
