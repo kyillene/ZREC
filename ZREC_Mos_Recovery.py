@@ -69,10 +69,9 @@ def zrec_mos_recovery(opinion_scores, stimuli_src_indices=''):
     Function to calculate recovered MOS, corresponding CIs, subject bias, subject inconsistency and content ambiguity.
     :param opinion_scores (numpy.array): opinion score array with the shape [nb_subjects x nb_stimuli]
            if certain opinion scores are missing, they are expected to be represented as np.nan. Any other value might lead undesired recovery.
-    :param stimuli_src_indices (numpy.array): input source content indices for each stimuli with the shape [nb_stimuli]
+    :param stimuli_src_indices (numpy.array): input source content indices for each stimulus with the shape [nb_stimuli]
            if no SRC indices is given, content ambiguity will reflect the stimuli ambiguity.
            This has no effect on MOS recovery. If you are not interested in getting content ambiguity statistics, you can skip this step.
-
     :return: mos_recovered (numpy.array): Recovered MOS as unbiased, inconsistency weighted average of the opinion scores (with the shape [nb_stimuli])
     :return: mos_recoverd_ci_95 (numpy.array): 95% one-sided confidence intervals of the recovered MOS (with the shape [nb_stimuli])
     :return: subject_inconsistency (numpy.array): Inconsistency of the subjects in the opinion_scores array (with the shape [nb_subjects])
@@ -84,6 +83,8 @@ def zrec_mos_recovery(opinion_scores, stimuli_src_indices=''):
     # Get trivial information from input opinion_scores
     nb_subjects = opinion_scores.shape[0]
     nb_stimuli = opinion_scores.shape[1]
+    nb_valid_subjects = np.sum(~np.isnan(opinion_scores), axis=0)
+
     # Convert opinion scores to float64
     opinion_scores = opinion_scores.astype(np.float64)
 
@@ -113,7 +114,7 @@ def zrec_mos_recovery(opinion_scores, stimuli_src_indices=''):
     mos_recovered, mos_recovered_std = weighted_avg_std(opinion_scores_unbiased_masked, subject_inconsistency**-2)
 
     # get the 95% CI from the std values
-    mos_recoverd_ci_95 = 1.96 * mos_recovered_std / np.sqrt(nb_subjects)
+    mos_recoverd_ci_95 = 1.96 * mos_recovered_std / np.sqrt(nb_valid_subjects)
 
     # if no src_indices is provided, we calculate the content ambiguity as the stimuli ambiguity
     if stimuli_src_indices == '':
@@ -132,7 +133,7 @@ def zrec_mos_recovery(opinion_scores, stimuli_src_indices=''):
         # wrap to a numpy array
         content_ambiguity = np.array(content_ambiguity)
 
-    return mos_recovered, mos_recoverd_ci_95, subject_inconsistency, subject_bias_factor, content_ambiguity
+    return mos_recovered, mos_recoverd_ci_95, subject_bias_factor, subject_inconsistency, content_ambiguity
 
 
 def zrec_percentile_recovery(opinion_scores, percentile=25):
