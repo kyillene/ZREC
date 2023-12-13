@@ -10,6 +10,20 @@
 	
 * Content ambiguity estimation
 
+If you use this in any of your research work, please cite the following paper:
+
+```
+@INPROCEEDINGS{10222033,
+  author={Zhu, Jingwen and Ak, Ali and Le Callet, Patrick and Sethuraman, Sriram and Rahul, Kumar},
+  booktitle={2023 IEEE International Conference on Image Processing (ICIP)}, 
+  title={ZREC: Robust Recovery of Mean and Percentile Opinion Scores}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={2630-2634},
+  doi={10.1109/ICIP49359.2023.10222033}}
+```
+
 ### Requirement ###
 [numpy](https://numpy.org "numpy") is the only requirement for ZREC.
 
