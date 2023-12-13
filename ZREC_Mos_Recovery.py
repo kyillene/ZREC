@@ -133,7 +133,7 @@ def zrec_mos_recovery(opinion_scores, stimuli_src_indices=''):
         # wrap to a numpy array
         content_ambiguity = np.array(content_ambiguity)
 
-    return mos_recovered, mos_recoverd_ci_95, subject_bias_factor, subject_inconsistency, content_ambiguity
+    return mos_recovered, mos_recoverd_ci_95, subject_inconsistency, subject_bias_factor, content_ambiguity
 
 
 def zrec_percentile_recovery(opinion_scores, percentile=25):
